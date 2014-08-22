@@ -18,20 +18,27 @@ float x;
 
 public void setup()
 {
-	size(200,200);
+	size(1600,500);
 	background(200,200,200);
 }
 public void draw()
 {
-	drawCircles();
 	x = random(0,100);
+	drawCircles();
+	drawRect();
 }
 
 public void drawCircles() 
 {
 	noStroke();
 	fill(random(74,200),random(162,200),224);
-	ellipse(random(50,100),random(50,100),x+50,x+50);
+	ellipse(random(50,900),random(50,500),x+50,x+50);
+}
+
+public void drawRect() {
+	noStroke();
+	fill(random(53,150),random(242,255),random(56,75));
+	rect(random(50,900), random(50,500),x+50,x+50);
 }
 
   static public void main(String[] passedArgs) {
