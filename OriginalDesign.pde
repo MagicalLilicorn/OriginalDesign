@@ -3,7 +3,7 @@ float x;
 void setup()
 {
 	size(1400,500);
-	background(200,200,200);
+	background(0,0,s0);
 }
 void draw()
 {
