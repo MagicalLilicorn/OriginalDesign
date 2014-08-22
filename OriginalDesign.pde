@@ -1,28 +1,48 @@
+float randomSize;
 float x;
-PImage img;
+float y;
+PImage pika;
+PImage squirtle;
 void setup()
 {
-	img = loadImage("pikachu.gif.gif");
-	size(1400,500);
+	pika = loadImage("pikachu.gif.gif");
+	squirtle = loadImage("squirtle.gif");
+	size(1200,500);
 	background(200,200,200);
 }
 void draw()
 {
-	x = random(0,100);
+	randomSize = random(0,100);
+	x = random(-500,1200);
+	y = random(-200,500);
 	drawCircles();
 	drawRect();
-	image(img, random(-500,1400),random(-500,500));
+	if (x <= 600){
+		image(pika, x,y);
+	} else {
+		image(squirtle, x,y);
+	}
 }
 
 void drawCircles() 
 {
 	noStroke();
-	fill(random(212,255),random(28,100),28);
-	ellipse(random(0,1400),random(-200,500),x+50,x+50);
+	if (x <= 600){
+		fill(random(212,255),random(28,100),28);
+	} else {
+		fill(random(114,200),random(177,255),232);
+	}
+	
+	ellipse(x,y,randomSize+50,randomSize+50);
 }
 
 void drawRect() {
 	noStroke();
-	fill(random(212,255),random(206,255),random(28,75));
-	rect(random(-200,1400), random(-200,500),x+50,x+50);
+	if (x <= 600){
+		fill(random(212,255),random(206,255),random(28,75));
+	} else {
+		fill(random(114,200),random(232,255),random(149,200));
+	}
+	rect(x,y,randomSize+50,randomSize+50);
 }
+
