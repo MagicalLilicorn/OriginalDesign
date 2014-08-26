@@ -3,13 +3,25 @@ float x;
 float y;
 PImage pika;
 PImage squirtle;
+import ddf.minim.*;
+Minim minim;
+AudioPlayer pikasfx, squirtlesfx;
+
 void setup()
 {
+	minim = new Minim(this);
+	pikasfx = minim.loadFile("pika.wav");
+	squirtlesfx = minim.loadFile("squirtle_squirtle.wav");
+	frameRate(60);
+	//noLoop();
 	pika = loadImage("pikachu.gif.gif");
 	squirtle = loadImage("squirtle.gif");
 	size(1200,500);
 	background(200,200,200);
+	pikasfx.play();
+	squirtlesfx.play();
 }
+
 void draw()
 {
 	randomSize = random(0,100);
@@ -19,8 +31,10 @@ void draw()
 	drawRect();
 	if (x < 400){
 		image(pika, x,y);
+		
 	} else {
 		image(squirtle, x,y);
+		
 	}
 }
 
@@ -44,4 +58,8 @@ void drawRect() {
 	}
 	rect(x,y,randomSize+50,randomSize+50);
 }
+
+// void mousePressed() {
+// 	redraw();
+// }
 

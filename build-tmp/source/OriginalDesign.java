@@ -3,6 +3,8 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
+import ddf.minim.*; 
+
 import java.util.HashMap; 
 import java.util.ArrayList; 
 import java.io.File; 
@@ -19,13 +21,25 @@ float x;
 float y;
 PImage pika;
 PImage squirtle;
+
+Minim minim;
+AudioPlayer pikasfx, squirtlesfx;
+
 public void setup()
 {
+	minim = new Minim(this);
+	pikasfx = minim.loadFile("pika.wav");
+	squirtlesfx = minim.loadFile("squirtle_squirtle.wav");
+	frameRate(60);
+	//noLoop();
 	pika = loadImage("pikachu.gif.gif");
 	squirtle = loadImage("squirtle.gif");
 	size(1200,500);
 	background(200,200,200);
+	pikasfx.play();
+	squirtlesfx.play();
 }
+
 public void draw()
 {
 	randomSize = random(0,100);
@@ -35,8 +49,10 @@ public void draw()
 	drawRect();
 	if (x < 400){
 		image(pika, x,y);
+		
 	} else {
 		image(squirtle, x,y);
+		
 	}
 }
 
@@ -60,6 +76,10 @@ public void drawRect() {
 	}
 	rect(x,y,randomSize+50,randomSize+50);
 }
+
+// void mousePressed() {
+// 	redraw();
+// }
 
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "OriginalDesign" };
