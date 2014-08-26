@@ -17,7 +17,7 @@ void draw()
 	y = random(-200,500);
 	drawCircles();
 	drawRect();
-	if (x < 600){
+	if (x < 400){
 		image(pika, x,y);
 	} else {
 		image(squirtle, x,y);
@@ -32,7 +32,6 @@ void drawCircles()
 	} else {
 		fill(random(114,200),random(177,255),232);
 	}
-	
 	ellipse(x,y,randomSize+50,randomSize+50);
 }
 
