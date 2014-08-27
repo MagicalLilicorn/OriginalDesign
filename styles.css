@@ -1,7 +1,9 @@
 
 body {
-    background-color: rgb(200,200,200);
-    color: rgb(0,0,0);
+    background: linear-gradient(red, white);
+    background-repeat:no-repeat;
+    background-position: center;
+    /*background-color: rgb(200,200,200);*/
     font-family: "Open Sans", sans-serif;
     text-align: center;
 }
@@ -13,11 +15,12 @@ body {
 }
 
 header {
-	
+	color: rgb(255,255,255);
 }
 
 footer {
 	font-style: italic;
 	font-size: 90%;
+    color: rgb(0,0,0);
 }
 

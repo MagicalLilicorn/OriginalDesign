@@ -3,8 +3,6 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
-import ddf.minim.*; 
-
 import java.util.HashMap; 
 import java.util.ArrayList; 
 import java.io.File; 
@@ -21,23 +19,23 @@ float x;
 float y;
 PImage pika;
 PImage squirtle;
-
-Minim minim;
-AudioPlayer pikasfx, squirtlesfx;
+// import ddf.minim.*;
+// Minim minim;
+// AudioPlayer pikasfx, squirtlesfx;
 
 public void setup()
 {
-	minim = new Minim(this);
-	pikasfx = minim.loadFile("pika.wav");
-	squirtlesfx = minim.loadFile("squirtle_squirtle.wav");
-	frameRate(60);
+	// minim = new Minim(this);
+	// pikasfx = minim.loadFile("pika.wav");
+	// squirtlesfx = minim.loadFile("squirtle_squirtle.wav");
+	//frameRate();
 	//noLoop();
 	pika = loadImage("pikachu.gif.gif");
 	squirtle = loadImage("squirtle.gif");
 	size(1200,500);
 	background(200,200,200);
-	pikasfx.play();
-	squirtlesfx.play();
+	// pikasfx.play();
+	// squirtlesfx.play();
 }
 
 public void draw()

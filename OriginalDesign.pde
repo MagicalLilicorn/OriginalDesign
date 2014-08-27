@@ -12,7 +12,7 @@ void setup()
 	// minim = new Minim(this);
 	// pikasfx = minim.loadFile("pika.wav");
 	// squirtlesfx = minim.loadFile("squirtle_squirtle.wav");
-	frameRate();
+	//frameRate();
 	//noLoop();
 	pika = loadImage("pikachu.gif.gif");
 	squirtle = loadImage("squirtle.gif");
